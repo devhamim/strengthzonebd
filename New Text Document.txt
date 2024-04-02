@@ -1,0 +1,24 @@
+WWWAcct 12.6.0 (c) 2023 cPanel, L.L.C....
+
++===================================+
+ New Account Info                  
++===================================+
+ Domain kamrulbiogas.com
+ Ip 103.175.21.13 (n)
+ HasCgi y
+ UserName kamrulbiogas
+ PassWord ~B%Fy&ERVx1d
+ CpanelMod jupiter
+ HomeRoot home
+ Quota 2 GB
+ NameServer1 ns1.nugortech.com
+ NameServer2 ns2.nugortech.com
+ NameServer3 ns1.bkdns.one
+ NameServer4 
+ Contact Email kamrulbiogas@gmail.com
+ Package nugor_2 GB Package
+ Feature List default
+ Account Enhancements None
+ Language en
++===================================+
+...Done
