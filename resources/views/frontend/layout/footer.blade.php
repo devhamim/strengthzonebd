@@ -155,7 +155,7 @@
 
         <div class="footer-bottom">
 
-            <div class="copyright">{{ $setting->first()->footer }}  Design & Development by <a href="https://nugortechit.com/" class="text-primary">Nugortech IT</a></div>
+            <div class="copyright">{{ $setting->first()->footer }}  Design & Development by <a href="https://www.boguraweb.com/" class="text-primary">Boguraweb</a></div>
 
         </div>
 

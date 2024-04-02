@@ -1,3 +1,3 @@
 <div class="footer">
-   <p>{{ $setting->first()->footer }} Design & Development by<a href="https://nugortech.com/" class="text-primary">Nugortechit</a></p>
+    <p>{{ $setting->first()->footer }}  Design & Development by <a href="https://www.boguraweb.com/" class="text-primary">Boguraweb</a></p>
 </div>
