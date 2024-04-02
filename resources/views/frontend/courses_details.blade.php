@@ -116,11 +116,11 @@
                                                     <h2>{{ $courses->total }}Tk</h2>
                                                     <p><span>{{ $courses->price }}Tk</span> {{ $courses->discount }}% off</p>
                                                 </div>
-                                                @auth('customerlogin')
                                                 <a href="{{ route('course.checkout', $courses->slug) }}" class="btn btn-enroll w-100">Enroll Now</a>
+                                                {{-- @auth('customerlogin')
                                                 @else
                                                 <a href="{{ route('customer.reglogin') }}" class="btn btn-enroll w-100">Enroll Now</a>
-                                                @endauth
+                                                @endauth --}}
 
                                             </div>
                                         </div>

@@ -39,13 +39,23 @@
                                         <!--Form Group-->
                                         <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                             <div class="field-label">Name <sup>*</sup></div>
-                                            <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ Auth::guard('customerlogin')->user()->name }}" placeholder="Name" required>
+                                            @auth('customerlogin')
+                                                <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ Auth::guard('customerlogin')->user()->name }}" placeholder="Name" required>
+                                            @else
+                                                <input type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name" required>
+                                            @endauth
+
                                         </div>
 
                                         <!--Form Group-->
                                         <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                             <div class="field-label">Email <sup>*</sup></div>
-                                            <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ Auth::guard('customerlogin')->user()->email }}" placeholder="Email" required>
+                                            @auth('customerlogin')
+                                                <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ Auth::guard('customerlogin')->user()->email }}" placeholder="Email" required>
+                                            @else
+                                                <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required>
+                                            @endauth
+
                                         </div>
 
                                         <!--Form Group-->
@@ -72,8 +82,8 @@
                                 <div class="sec-title"><h2>Your Order</h2></div>
                                 <div class="shop-order-box">
                                 	<ul class="order-list">
-                                    	<li>Prodcut<span> {{ $courses->title }}</span></li>
-                                        <li>Price<span>{{ $courses->price }} Tk</span></li>
+                                    	<li>Prodcut<span> {{ $courses->title }}</span></li><br>
+                                        <li>Price<span> {{ $courses->price }} Tk</span></li>
                                         <li>Discount<span>{{ $courses->discount }}%</span></li>
                                         <li>Total<span class="dark">{{ $courses->total }} Tk</span></li>
                                     </ul>
@@ -86,10 +96,10 @@
                                             <ul>
                                             	<li>
                                                     <div class="radio-option">
-                                                        <input type="radio" name="bkash" id="payment-2" checked>
-                                                        <label for="payment-2"><strong>Bkash</strong>
-                                                            @if($setting->first()->number != null)
-                                                        	    <span class="small-text">{{ $courses->total }} Tk Send Money This Number: <br>{{ $setting->first()->number }} </span>
+                                                        <input type="number" name="bkash_number" placeholder="Bkash Number" value="{{ old('bkash_number') }}" required>
+                                                        <input type="text" name="bkash_tran" placeholder="Bkash Transaction" value="{{ old('bkash_tran') }}" required>
+                                                        @if($setting->first()->number != null)
+                                                        <label class="mt-3" for="payment-2">{{ $courses->total }}<strong> Tk Send Money This Number: </strong><br>{{ $setting->first()->number }}
                                                             @endif
                                                         </label>
                                                     </div>

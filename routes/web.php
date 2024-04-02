@@ -58,6 +58,9 @@ Route::get('/our/privacy/policy', [FrontendController::class, 'our_privacy_polic
 Route::post('/blog/comment', [BlogController::class, 'blog_comment'])->name('blog.comment');
 Route::get('/course/checkout/{slug}', [FrontendController::class, 'course_checkout'])->name('course.checkout');
 Route::post('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
+Route::get('/success/enroll', [FrontendController::class, 'success_enroll'])->name('success.enroll');
+
+
 Route::get('/student/register/login', [FrontendController::class, 'customer_reglogin'])->name('customer.reglogin');
 Route::post('/student/register', [FrontendController::class, 'customer_register'])->name('customer.register');
 Route::post('/student/login', [FrontendController::class, 'customer_login'])->name('customer.login');
@@ -94,6 +97,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('index');
             'regstudent'        => RegisterStudentController::class,
         ]);
 
+Route::post('/account/permission/update', [StudentListController::class, 'account_permission_update'])->name('account.permission.update');
 Route::get('/course/invantory/{id}', [CourseController::class, 'course_invantory'])->name('course.invantory');
 Route::post('/course/invantory/store', [CourseController::class, 'course_invantory_store'])->name('course.invantory.store');
 Route::get('/course/video/destroy/{id}', [CourseController::class, 'course_video_destroy'])->name('course.video.destroy');

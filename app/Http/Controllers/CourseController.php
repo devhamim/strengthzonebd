@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\checkout;
 use App\Models\course;
 use App\Models\courseVideo;
 use Illuminate\Http\Request;
@@ -232,4 +233,6 @@ class CourseController extends Controller
         toast('Delete Success','warning');
         return back();
     }
+
+    
 }

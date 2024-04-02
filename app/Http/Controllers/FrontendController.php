@@ -20,6 +20,7 @@ use App\Models\customers;
 use App\Models\privacyPolicy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Str;
 
 class FrontendController extends Controller
 {
@@ -170,17 +171,34 @@ class FrontendController extends Controller
             'name'=>'required',
             'email'=>'required',
             'number'=>'required',
+            'bkash_number'=>'required',
+            'bkash_tran'=>'required',
             'address'=>'',
             'note'=>'',
             'course_id'=>'required',
         ];
 
         $validatesData = $request->validate($rules);
-        $validatesData['customer_id'] = Auth::guard('customerlogin')->user()->id;
+        if(Auth::guard('customerlogin')->check()){
+            $validatesData['customer_id'] = Auth::guard('customerlogin')->user()->id;
+        }
 
         checkout::create($validatesData);
-        return redirect()->route('student.dashboard');
+
+        $random_pass = Str::random(8);
+        customers::insert([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$random_pass,
+        ]);
+        // return view('frontend.successpage');
+        return redirect()->route('success.enroll');
         toast('Enroll Successfully','success');
+    }
+
+    // success_enroll
+    function success_enroll(){
+        return view('frontend.successpage');
     }
 
     // customer_reglogin\

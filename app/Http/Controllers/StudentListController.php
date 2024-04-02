@@ -67,4 +67,13 @@ class StudentListController extends Controller
         toast('Delete Success','warning');
         return back();
     }
+
+    // account_permission_update
+    function account_permission_update(Request $request){
+        checkout::where('id', $request->id)->update([
+            'permission' => $request->permission,
+        ]);
+        toast('permission Success','warning');
+        return back();
+    }
 }

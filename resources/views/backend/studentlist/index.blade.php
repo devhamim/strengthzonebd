@@ -37,6 +37,7 @@
                             <th>Number</th>
                             <th>Address</th>
                             <th>Note</th>
+                            <th>Permission</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -50,6 +51,21 @@
                                 <td><span class="table-dscr">{{ $students->number }}</span></td>
                                 <td><span class="table-dscr">{{ $students->address }}</span></td>
                                 <td><span class="table-dscr">{{ $students->note }}</span></td>
+                                <td>
+                                    @if ($students->permission == 0)
+                                        <form action="{{ route('account.permission.update') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" value="{{ $students->id }}" name="id">
+                                            <input type="hidden" value="1" name="permission">
+                                            <button style="border: none;" type="submit" class="text-danger" onclick="return confirm('Are you sure to Approve this?')">
+                                                Inactive
+                                            </button>
+                                        </form>
+                                    @else
+                                        <span class="text-success">Active</span>
+                                    @endif
+
+                                </td>
                                 <td>
                                     <div class="btn-box">
                                         <form action="{{ route('studentlist.destroy',  $students->id) }}" method="POST">

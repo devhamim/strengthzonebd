@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('number');
+            $table->string('bkash_number');
+            $table->string('bkash_tran');
             $table->string('address')->nullable();
             $table->longText('note')->nullable();
             $table->integer('course_id');
+            $table->integer('permission')->default(0);
             $table->timestamps();
         });
     }
