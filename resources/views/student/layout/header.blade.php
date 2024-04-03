@@ -51,7 +51,7 @@
                                         class="avatar-img rounded-circle">
                                 </div>
                                 <div class="user-text">
-                                    <h6>{{ Auth::guard('customerlogin')->user()->name }}</h6>
+                                    {{-- <h6>{{ Auth::guard('customerlogin')->user()->name }}</h6> --}}
                                     <p class="text-muted mb-0">Student</p>
                                 </div>
                             </div>

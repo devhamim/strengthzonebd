@@ -515,7 +515,7 @@
 
                     <div class="image">
 
-                        <img src="{{ asset('frontend') }}/images/resource/about-1.png" alt="" />
+                        {{-- <img src="{{ asset('frontend') }}/images/resource/about-1.png" alt="" /> --}}
 
                     </div>
 

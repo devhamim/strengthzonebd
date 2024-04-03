@@ -25,7 +25,7 @@
             <div class="row clearfix">
 
                 <!--Form Column-->
-                <div class="form-column column col-lg-12 col-md-12 col-sm-12">
+                <div class="form-column column col-lg-6 col-md-12 col-sm-12 m-auto">
 
                     <div class="sec-title">
                         <h2>Login Now</h2>
