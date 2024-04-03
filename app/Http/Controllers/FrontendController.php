@@ -170,7 +170,7 @@ class FrontendController extends Controller
     function checkout(Request $request){
         $rules = [
             'name'=>'required',
-            'email' => 'required|email|unique:customers',
+            'email' => 'required',
             'number'=>'required',
             'bkash_number'=>'required',
             'bkash_tran'=>'required',
@@ -183,16 +183,18 @@ class FrontendController extends Controller
         if(Auth::guard('customerlogin')->check()){
             $validatesData['customer_id'] = Auth::guard('customerlogin')->user()->id;
         }
+        else{
+            $random_pass = Str::random(8);
+            $customer_id = customers::insertGetId([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'password'=>bcrypt($random_pass),
+                'temp'=>$random_pass,
+                'created_at'=>Carbon::now(),
+            ]);
 
-        $random_pass = Str::random(8);
-        $customer_id = customers::insertGetId([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>encrypt($random_pass),
-            'temp'=>$random_pass,
-            'created_at'=>Carbon::now(),
-        ]);
-        $validatesData['customer_id'] = $customer_id;
+            $validatesData['customer_id'] = $customer_id;
+        }
 
         checkout::create($validatesData);
 
@@ -214,12 +216,13 @@ class FrontendController extends Controller
     function customer_register(Request $request){
         $rules = [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:customers',
             'password' => 'required',
         ];
 
         $valudatesData = $request->validate($rules);
         $valudatesData['password'] = bcrypt($request->password);
+        $valudatesData['temp'] = 'n/a';
 
         customers::create($valudatesData);
 
@@ -231,6 +234,7 @@ class FrontendController extends Controller
             return redirect()->route('customer.reglogin');
         }
     }
+
 
     // customer_login
     function customer_login(Request $request){

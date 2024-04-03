@@ -25,7 +25,7 @@
             <div class="row clearfix">
 
                 <!--Form Column-->
-                <div class="form-column column col-lg-6 col-md-12 col-sm-12">
+                <div class="form-column column col-lg-12 col-md-12 col-sm-12">
 
                     <div class="sec-title">
                         <h2>Login Now</h2>
@@ -55,7 +55,7 @@
                 </div>
 
                 <!--Form Column-->
-                <div class="form-column column col-lg-6 col-md-12 col-sm-12">
+                {{-- <div class="form-column column col-lg-6 col-md-12 col-sm-12">
 
                     <div class="sec-title">
                         <h2>Register Here</h2>
@@ -90,7 +90,7 @@
                         </form>
                     </div>
 
-                </div>
+                </div> --}}
 
             </div>
         </div>

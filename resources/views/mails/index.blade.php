@@ -11,7 +11,7 @@
     <p>Thank you for signing up with our website. Your login user id is </p>
     <ul>
         <li>Email: {{ $mailData['email'] }}</li>
-        <li>Password: {{ $mailData['password'] }}</li>
+        <li>Password: {{ $mailData['temp'] }}</li>
     </ul>
     <p>Please Use this to login your account in <a href="https://strengthzonebd.com/">Strength Zone BD</a></p>
     <p>Thanks you!</p>

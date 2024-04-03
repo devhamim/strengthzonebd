@@ -36,6 +36,8 @@
                             <th>Email</th>
                             <th>Number</th>
                             <th>Address</th>
+                            <th>Bkash Number</th>
+                            <th>bkash transaction</th>
                             <th>Note</th>
                             <th>Permission</th>
                             <th>Action</th>
@@ -50,6 +52,8 @@
                                 <td><span class="table-dscr">{{ $students->email }}</span></td>
                                 <td><span class="table-dscr">{{ $students->number }}</span></td>
                                 <td><span class="table-dscr">{{ $students->address }}</span></td>
+                                <td><span class="table-dscr">{{ $students->bkash_number }}</span></td>
+                                <td><span class="table-dscr">{{ $students->bkash_tran }}</span></td>
                                 <td><span class="table-dscr">{{ $students->note }}</span></td>
                                 <td>
                                     @if ($students->permission == 0)

@@ -55,7 +55,9 @@
                                             @else
                                                 <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required>
                                             @endauth
-
+                                            @error('email')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
                                         </div>
 
                                         <!--Form Group-->

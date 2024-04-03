@@ -30,9 +30,9 @@
                         <li><a href="{{ route('our.portfolio') }}">Portfolio</a></li>
                         <li><a href="{{ route('our.blog') }}">Blog</a></li>
                         <li><a href="{{ route('contect') }}">Contact us</a></li>
-                        <li class="login-link">
+                        {{-- <li class="login-link">
                             <a href="login.html">Login / Signup</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <ul class="nav header-navbar-rht">
@@ -51,11 +51,11 @@
                                         class="avatar-img rounded-circle">
                                 </div>
                                 <div class="user-text">
-                                    <h6>Rolands R</h6>
+                                    <h6>{{ Auth::guard('customerlogin')->user()->name }}</h6>
                                     <p class="text-muted mb-0">Student</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="setting-edit-profile.html"><i
+                            {{-- <a class="dropdown-item" href="setting-edit-profile.html"><i
                                     class="feather-user me-1"></i> Profile</a>
                             <a class="dropdown-item" href="setting-student-subscription.html"><i
                                     class="feather-star me-1"></i> Subscription</a>
@@ -64,8 +64,8 @@
                                 <div class="form-check form-switch check-on m-0">
                                     <input class="form-check-input" type="checkbox" id="night-mode">
                                 </div>
-                            </div>
-                            <a class="dropdown-item" href="{{url('/')}}"><i class="feather-log-out me-1"></i>
+                            </div> --}}
+                            <a class="dropdown-item" href="{{ route('customer.logout') }}"><i class="feather-log-out me-1"></i>
                                 Logout</a>
                         </div>
                     </li>
