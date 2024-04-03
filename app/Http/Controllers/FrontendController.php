@@ -18,6 +18,7 @@ use App\Models\course;
 use App\Models\courseVideo;
 use App\Models\customers;
 use App\Models\privacyPolicy;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Str;
@@ -169,7 +170,7 @@ class FrontendController extends Controller
     function checkout(Request $request){
         $rules = [
             'name'=>'required',
-            'email'=>'required',
+            'email' => 'required|email|unique:customers',
             'number'=>'required',
             'bkash_number'=>'required',
             'bkash_tran'=>'required',
@@ -183,15 +184,18 @@ class FrontendController extends Controller
             $validatesData['customer_id'] = Auth::guard('customerlogin')->user()->id;
         }
 
-        checkout::create($validatesData);
-
         $random_pass = Str::random(8);
-        customers::insert([
+        $customer_id = customers::insertGetId([
             'name'=>$request->name,
             'email'=>$request->email,
-            'password'=>$random_pass,
+            'password'=>encrypt($random_pass),
+            'temp'=>$random_pass,
+            'created_at'=>Carbon::now(),
         ]);
-        // return view('frontend.successpage');
+        $validatesData['customer_id'] = $customer_id;
+
+        checkout::create($validatesData);
+
         return redirect()->route('success.enroll');
         toast('Enroll Successfully','success');
     }

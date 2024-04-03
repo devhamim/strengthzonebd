@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailNotify;
 use App\Models\checkout;
+use App\Models\customers;
 use Illuminate\Http\Request;
+use Mail;
 
 class StudentListController extends Controller
 {
@@ -70,9 +73,23 @@ class StudentListController extends Controller
 
     // account_permission_update
     function account_permission_update(Request $request){
+        $request->validate([
+            'customer_id'=>'required',
+            'permission'=>'required',
+        ]);
+
+        $mailData = [
+            'title' => 'My mail from Strengthzonebd',
+            'body' => 'Your Login email and password.'
+        ];
+
+        $mailData = customers::where('id', $request->customer_id)->first();
+        Mail::to($mailData->email)->send(new MailNotify($mailData));
+
         checkout::where('id', $request->id)->update([
             'permission' => $request->permission,
         ]);
+
         toast('permission Success','warning');
         return back();
     }

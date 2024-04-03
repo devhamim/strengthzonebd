@@ -56,6 +56,7 @@
                                         <form action="{{ route('account.permission.update') }}" method="POST">
                                             @csrf
                                             <input type="hidden" value="{{ $students->id }}" name="id">
+                                            <input type="hidden" value="{{ $students->customer_id }}" name="customer_id">
                                             <input type="hidden" value="1" name="permission">
                                             <button style="border: none;" type="submit" class="text-danger" onclick="return confirm('Are you sure to Approve this?')">
                                                 Inactive
