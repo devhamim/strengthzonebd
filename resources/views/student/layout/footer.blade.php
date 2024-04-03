@@ -83,7 +83,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <p class="">{{ $setting->first()->footer }}  Design & Development by <a href="https://nugortechit.com/" class="text-primary">Nugortech IT</a></p>
+                            <p class="">{{ $setting->first()->footer }}  Design & Development by <a href="https://www.boguraweb.com/" class="text-primary">Boguraweb</a></p>
                         </div>
                     </div>
                 </div>
