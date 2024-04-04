@@ -188,6 +188,8 @@ class FrontendController extends Controller
             $customer_id = customers::insertGetId([
                 'name'=>$request->name,
                 'email'=>$request->email,
+                'number'=>$request->number,
+                'address'=>$request->address,
                 'password'=>bcrypt($random_pass),
                 'temp'=>$random_pass,
                 'created_at'=>Carbon::now(),

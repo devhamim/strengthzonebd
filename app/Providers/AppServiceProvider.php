@@ -29,12 +29,25 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('frontend.layout.footer', function ($view) {
             $view->with('courses', course::where('status', 1)->get());
         });
-        // courses
+
+        // student coursw
+        view()->composer('student.layout.footer', function ($view) {
+            $view->with('courses', course::where('status', 1)->get());
+        });
+        // blog
         view()->composer('frontend.layout.footer', function ($view) {
+            $view->with('blogs', blog::where('status', 1)->get());
+        });
+        // student blog
+        view()->composer('student.layout.footer', function ($view) {
             $view->with('blogs', blog::where('status', 1)->get());
         });
         // setting
         View::composer('frontend.layout.footer', function ($view){
+            $view->with('setting', setting::all());
+        });
+        // about
+        View::composer('frontend.about', function ($view){
             $view->with('setting', setting::all());
         });
         // setting

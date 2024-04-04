@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\checkout;
 use App\Models\course;
 use App\Models\courseVideo;
+use App\Models\customers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,4 +52,35 @@ class StudentDashboardController extends Controller
             'courses_videos'=>$courses_videos,
         ]);
     }
+
+    // student_edit
+    function student_edit(){
+        return view('student.studentEdit');
+    }
+    // student.update
+    function student_update(Request $request){
+        if($request->password != null){
+            $request->validate([
+                'password' => 'required_with:password_confirmation|same:password_confirmation',
+            ]);
+            customers::where('id', Auth::guard('customerlogin')->user()->id)->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'number'=>$request->number,
+                'address'=>$request->address,
+                'password'=>bcrypt($request->password),
+                'temp'=>$request->password,
+            ]);
+        }
+        else{
+            customers::where('id', Auth::guard('customerlogin')->user()->id)->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'number'=>$request->number,
+                'address'=>$request->address,
+            ]);
+        }
+        return back()->with('success', 'Update Successfully');
+    }
+
 }

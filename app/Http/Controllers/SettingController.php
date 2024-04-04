@@ -78,12 +78,14 @@ class SettingController extends Controller
             'instagram'=>'',
             'youtube'=>'',
             'pinterest'=>'',
+            'facebook_pixel'=>'',
+            'google_tag'=>'',
         ];
-        
+
          /**
          * Handle upload an image
          */
-       
+
         $validatesData = $request->validate($rules);
 
 

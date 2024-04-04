@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="{{ asset('student') }}/plugins/select2/css/select2.min.css">
 
     <link rel="stylesheet" href="{{ asset('student') }}/css/style.css">
+
+        {{-- facebook pixel --}}
+        {!! $setting->first()->facebook_pixel !!}
+
+        {{-- Google tag --}}
+        {!! $setting->first()->google_tag !!}
 </head>
 
 <body>

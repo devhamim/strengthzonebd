@@ -20,32 +20,18 @@
             </div>
 
             <div class="sidebar-textwidget">
-
-
-
                 <!-- Sidebar Info Content -->
-
                 <div class="sidebar-info-contents">
-
                     <div class="content-inner">
-
                         <div class="logo">
-
                             <a href="{{ url('/') }}"><img src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="" /></a>
-
                         </div>
-
                         <div class="content-box">
-
                             <h2>About Us</h2>
-
                             <p class="text">{{ $setting->first()->about }}</p>
                         </div>
-
                         <div class="contact-info">
-
                             <h2>Contact Info</h2>
-
                             <ul class="list-style-one">
 
                                 <li><span class="icon fa fa-location-arrow"></span>{{ $setting->first()->address }}</li>
@@ -54,8 +40,7 @@
 
                                 <li><span class="icon fa fa-envelope"></span>{{ $setting->first()->email }}</li>
 
-                                <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday:
-                                    Closed</li>
+                                <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00</li>
 
                             </ul>
 
@@ -182,8 +167,7 @@
                         <div class="btns-box">
 
                             <div class="btn-one-outer"><a href="{{ route('courses') }}"
-                                    class="theme-btn btn-style-one"><span class="txt">Join Us
-                                        Now</span></a></div>
+                                    class="theme-btn btn-style-one"><span class="txt">Courses</span></a></div>
                         </div>
                     </div>
                 </li>
@@ -242,38 +226,31 @@
 
                     </div>
 
-                    <h4><a href="classes-detail.html">Progression</a></h4>
+                    <h4><a href="classes-detail.html">Calories count</a></h4>
 
-                    <div class="text">The point of using Lorem Ipsum is that it has pi motive re-or-less for
-                        normal distribution.</div>
+                    <div class="text">To plan our diet, we need to know the calorie count correctly.</div>
 
                     <span class="big-icon flaticon-tools-and-utensils"></span>
+                    <a href="https://www.youtube.com/watch?si=OwN1yIvNpYAEk_Uo&v=fGiZaZbI1h0&feature=youtu.be" class="btn btn-secondary">Click Hear</a>
 
                 </div>
 
             </div>
 
-
-
             <!-- Service Block -->
-
             <div class="service-block style-two col-lg-4 col-md-6 col-sm-12">
-
                 <div class="inner-box">
-
                     <div class="icon-box">
-
                         <span class="icon flaticon-sports"></span>
-
                     </div>
 
                     <h4><a href="classes-detail.html">Free Class</a></h4>
 
-                    <div class="text">The point of using Lorem Ipsum is that it has pi motive re-or-less for
-                        normal distribution.</div>
+                    <div class="text">Through our free classes you will get to know,
+                        What kind of service do we provide?</div>
 
                     <span class="big-icon flaticon-sports"></span>
-
+                    <a href="https://www.youtube.com/watch?si=OwN1yIvNpYAEk_Uo&v=fGiZaZbI1h0&feature=youtu.be" class="btn btn-danger">Click Hear</a>
                 </div>
 
             </div>
@@ -294,11 +271,10 @@
 
                     <h4><a href="classes-detail.html">Diabetes Free Class</a></h4>
 
-                    <div class="text">The point of using Lorem Ipsum is that it has pi motive re-or-less for
-                        normal distribution.</div>
+                    <div class="text">A diabetic patient does not understand how he should eat food.</div>
 
                     <span class="big-icon flaticon-plan"></span>
-
+                    <a href="https://www.youtube.com/watch?si=OwN1yIvNpYAEk_Uo&v=fGiZaZbI1h0&feature=youtu.be" class="btn btn-dark">Click Hear</a>
                 </div>
 
             </div>
@@ -515,7 +491,7 @@
 
                     <div class="image">
 
-                        {{-- <img src="{{ asset('frontend') }}/images/resource/about-1.png" alt="" /> --}}
+                        <img src="{{ asset('frontend') }}/images/resource/about-1.png" alt="" />
 
                     </div>
 
@@ -3214,10 +3190,8 @@
         <!--Map Outer-->
 
         <div class="map-outer">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3619.888133484943!2d89.35901000000001!3d24.86767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDUyJzAzLjYiTiA4OcKwMjEnMzIuNCJF!5e0!3m2!1sen!2sbd!4v1712209584593!5m2!1sen!2sbd" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25216.765666144616!2d144.9456413371385!3d-37.8112271492458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b8c21cb29b%3A0x1c045678462e3510!2sMelbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2s!4v1598513355690!5m2!1sen!2s"
-                height="550"></iframe>
 
         </div>
 

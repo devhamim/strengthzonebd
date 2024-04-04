@@ -96,7 +96,7 @@
                                             <input type="file" class="form-control" name="favicon" placeholder="Favicon" value="{{ $settings->first()->favicon }}">
                                         </div>
                                     </div>
-                                   
+
                                     <div class="col-md-4 col-sm-6">
                                         <label for="" class="form-label">Address</label>
                                         <div class="input-group">
@@ -148,7 +148,27 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <div class="profile-edit-tab-title">
+                                <h6>Pixel</h6>
+                            </div>
+                            <div class="private-information mb-30">
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="" class="form-label">Facebook Pixel</label>
+                                        <div class="input-group">
+                                            <textarea name="facebook_pixel" id="" class="form-control" placeholder="Facebook Pixel" cols="30" rows="10">{{ $settings->first()->facebook_pixel }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="" class="form-label">Google Tag</label>
+                                        <div class="input-group">
+                                            <textarea name="google_tag" id="" class="form-control" placeholder="Google Tag" cols="30" rows="10">{{ $settings->first()->google_tag }}</textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                             <div class="profile-edit-tab-title">
                                 <h6>Social Information</h6>
                             </div>
@@ -195,6 +215,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>

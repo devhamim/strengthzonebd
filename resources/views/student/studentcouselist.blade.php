@@ -28,6 +28,11 @@
                         <i class="feather-calendar"></i> Dashboard
                     </a>
                 </li>
+                <li class="nav-item {{ Request::is('student/edit')?'active':'' }}">
+                    <a href="{{ route('student.edit') }}" class="nav-link">
+                    <i class="feather-settings"></i> Edit Profile
+                    </a>
+                </li>
                 <li class="nav-item {{ Request::is('student/couse/list')?'active':'' }}">
                     <a href="{{ route('student.couse.list') }}" class="nav-link">
                         <i class="feather-calendar"></i> Course List

@@ -3,11 +3,11 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
 
                     <div class="footer-widget footer-about">
                         <div class="footer-logo">
-                            <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->logo }}" alt="logo">
+                            <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->footer_logo }}" alt="logo">
                         </div>
                         <div class="footer-about-content">
                             <p>{{ $setting->first()->about }}</p>
@@ -15,30 +15,34 @@
                     </div>
 
                 </div>
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-3 col-md-6">
 
-                    <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">For Instructor</h2>
-                        <ul>
-                            <li><a href="instructor-profile.html">Profile</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="instructor-list.html">Instructor</a></li>
-                            <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li>
-                        </ul>
-                    </div>
+                    @foreach ($blogs->take(2) as $blog)
+                        <div class="post">
+                            <div class="col-lg-6">
+                                <div class="thumb">
+                                    <a href="{{ route('our.blog.details', $blog->slug) }}">
+                                        <img width="100%" src="{{ asset('uploads/blog') }}/{{ $blog->image }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h6><a href="{{ route('our.blog.details', $blog->slug) }}">{{ $blog->title }}</a></h6>
+                                <span class="date">{{ $blog->created_at->format('d M Y') }}</span>
+                            </div>
+
+                        </div>
+                    @endforeach
 
                 </div>
                 <div class="col-lg-2 col-md-6">
 
                     <div class="footer-widget footer-menu">
-                        <h2 class="footer-title">For Student</h2>
+                        <h2 class="footer-title">Course</h2>
                         <ul>
-                            <li><a href="student-profile.html">Profile</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="students-list.html">Student</a></li>
-                            <li><a href="deposit-student-dashboard.html"> Dashboard</a></li>
+                            @foreach ($courses->take(6) as $course)
+                                <li><a href="{{ route('courses.details', $course->slug) }}">{{ $course->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -47,26 +51,29 @@
 
                     <div class="footer-widget footer-contact">
                         <h2 class="footer-title">News letter</h2>
-                        <div class="news-letter">
-                            <form>
-                                <input type="text" class="form-control"
-                                    placeholder="Enter your email address" name="email">
-                            </form>
-                        </div>
                         <div class="footer-contact-info">
                             <div class="footer-address">
                                 <img src="{{ asset('student') }}/img/icon/icon-20.svg" alt class="img-fluid">
-                                <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
+
+                                @if ($setting->first()->address != null)
+                                    <p>{{ $setting->first()->address }}</p>
+                                @endif
                             </div>
-                            <p>
-                                <img src="{{ asset('student') }}/img/icon/icon-19.svg" alt class="img-fluid">
-                                <a href="https://dreamslms.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="b1d5c3d4d0dcc2dddcc2f1d4c9d0dcc1ddd49fd2dedc">[email&#160;protected]</a>
-                            </p>
-                            <p class="mb-0">
-                                <img src="{{ asset('student') }}/img/icon/icon-21.svg" alt class="img-fluid">
-                                +19 123-456-7890
-                            </p>
+
+                            @if ($setting->first()->email != null)
+                                <p>
+                                    <img src="{{ asset('student') }}/img/icon/icon-19.svg" alt class="img-fluid">
+                                    <a href="mailto:{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
+                                </p>
+                            @endif
+                            @if ($setting->first()->number != null)
+                                <p class="mb-0">
+
+                                    <img src="{{ asset('student') }}/img/icon/icon-21.svg" alt class="img-fluid">
+                                    <a href="tel:{{ $setting->first()->number }}"> {{ $setting->first()->number }}</a>
+                                </p>
+                            @endif
+
                         </div>
                     </div>
 

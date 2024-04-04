@@ -70,6 +70,8 @@ Route::get('/student/logout', [FrontendController::class, 'customer_logout'])->n
 Route::get('/student/dashboard', [StudentDashboardController::class, 'student_dashboard'])->name('student.dashboard');
 Route::get('/student/course/list', [StudentDashboardController::class, 'student_couse_list'])->name('student.couse.list');
 Route::get('/student/course/details/{id}', [StudentDashboardController::class, 'student_course_details'])->name('student.course.details');
+Route::get('/student/edit', [StudentDashboardController::class, 'student_edit'])->name('student.edit');
+Route::post('/student/update', [StudentDashboardController::class, 'student_update'])->name('student.update');
 
 Auth::routes();
 

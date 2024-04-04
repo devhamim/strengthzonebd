@@ -71,14 +71,10 @@
 
                 <!--Mobile Navigation Toggler-->
 
-                <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
-
+                <div class="mobile-nav-toggler" style="font-size: 20px">Welcome</div>
                 <!-- Main Menu -->
-
                 <nav class="main-menu navbar-expand-md">
-
                     <div class="navbar-header">
-
                         <!-- Toggle Button -->
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -112,7 +108,6 @@
                 <!-- Main Menu End-->
                 <div class="outer-box clearfix">
                     <!-- Cart Box -->
-
                     <div class="cart-box">
                         @auth('customerlogin')
                             <div class="dropdown">

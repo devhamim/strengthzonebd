@@ -5,13 +5,13 @@
     	<div class="auto-container">
 			<div class="clearfix">
 				<div class="pull-left">
-					<h2>Login / Register</h2>
+					<h2>Login </h2>
 					<div class="text">Fitness is not a destination it is a way of life.</div>
 				</div>
 				<div class="pull-right">
 					<ul class="page-breadcrumb">
 						<li><a href="{{ url('/') }}">home</a></li>
-						<li>Login / Register</li>
+						<li>Login </li>
 					</ul>
 				</div>
 			</div>

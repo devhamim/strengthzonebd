@@ -98,11 +98,9 @@
                                             <ul>
                                             	<li>
                                                     <div class="radio-option">
-                                                        <input type="number" name="bkash_number" placeholder="Bkash Number" value="{{ old('bkash_number') }}" required>
-                                                        <input type="text" name="bkash_tran" placeholder="Bkash Transaction" value="{{ old('bkash_tran') }}" required>
-                                                        @if($setting->first()->number != null)
-                                                        <label class="mt-3" for="payment-2">{{ $courses->total }}<strong> Tk Send Money This Number: </strong><br>{{ $setting->first()->number }}
-                                                            @endif
+                                                        <input type="number" name="bkash_number" placeholder="Bkash/Nagad Number" value="{{ old('bkash_number') }}" required>
+                                                        <input type="text" name="bkash_tran" placeholder="Bkash/Nagad Transaction" value="{{ old('bkash_tran') }}" required>
+                                                        <label class="mt-3" for="payment-2">{{ $courses->total }}<strong> <span style="font-size: 12px">Tk Send Money This Bkash/Nagad Number:</span> </strong><br>01774044738
                                                         </label>
                                                     </div>
                                                 </li>

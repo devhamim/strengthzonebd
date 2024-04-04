@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
             $table->string('pinterest')->nullable();
+            $table->longText('facebook_pixel')->nullable();
+            $table->longText('google_tag')->nullable();
             $table->timestamps();
         });
     }

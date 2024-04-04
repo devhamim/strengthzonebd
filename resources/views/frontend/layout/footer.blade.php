@@ -125,11 +125,13 @@
 
                                 <ul>
 
-                                    <li>Monday – Friday:<span>07:00 – 21:00</span></li>
+                                    <li>Call Center: 24/7</span></li>
+                                    @if ($setting->first()->number != null)
+                                        <li><a href="tel:{{ $setting->first()->number }}"> {{ $setting->first()->number }}</a></li>
+                                    @endif
+                                    {{-- <li>Saturday:<span>07:00 – 16:00</span></li> --}}
 
-                                    <li>Saturday:<span>07:00 – 16:00</span></li>
-
-                                    <li>Sunday Closed</li>
+                                    {{-- <li>Sunday Closed</li> --}}
 
                                 </ul>
 

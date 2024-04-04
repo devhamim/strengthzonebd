@@ -29,6 +29,11 @@
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        {{-- facebook pixel --}}
+        {!! $setting->first()->facebook_pixel !!}
+
+        {{-- Google tag --}}
+        {!! $setting->first()->google_tag !!}
 </head>
 <body class="hidden-bar-wrapper">
     <div class="page-wrapper">
